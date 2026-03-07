@@ -12,8 +12,12 @@ services:
     environment:
       - ENV=local
       - QDRANT_URL=http://qdrant:6333
+      - SEC_USER_AGENT=VaishnaviKashyap SECFilingsCopilot vaishnavikashyap@gmail.com
+      - DATA_DIR=/app/data
     ports:
       - "8000:8000"
+    volumes:
+      - ../backend/data:/app/data
     depends_on:
       - qdrant
 
